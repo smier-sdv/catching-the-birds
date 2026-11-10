@@ -2,7 +2,6 @@ import pygame
 from player import Player
 from oiseau import Oiseau
 from constants import *
-from time import *
 import json
 
 class Game:
