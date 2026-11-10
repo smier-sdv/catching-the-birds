@@ -173,11 +173,11 @@ class Game:
                         final_score = self.playing()
                         
                         # ajouter final_score au json
-                        with open('historique_scores.json', 'r+', encoding="utf-8") as file :
+                        with open('record.json', 'r+', encoding="utf-8") as file :
                             temp = []
                             temp.append(json.load(file))
                         temp.append(final_score)
-                        with open('historique_scores.json', 'w', encoding="utf-8") as file :
+                        with open('record.json', 'w', encoding="utf-8") as file :
                             json.dump(max(temp),file,indent = 4)
                             
 
@@ -200,7 +200,7 @@ class Game:
             self.screen.blit(menu_instructions, (SCREEN_WIDTH/6, SCREEN_HEIGHT/2+60))            
             
             # ici afficher meilleur score en haut à gauche ou au milieu
-            with open('historique_scores.json', 'r+', encoding="utf-8") as file :
+            with open('record.json', 'r+', encoding="utf-8") as file :
                 temp = json.load(file)
             best_score = self.font_base.render(f"Meilleur score : {temp}", False, "white")
             self.screen.blit(best_score, (150,10))
